@@ -7,6 +7,42 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
+        <GridSplitter Grid.Column="1" HorizontalAlignment="Center" Width="5"/>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="1" Name="RowsDeepTextBLock" HorizontalAlignment="Left" Margin="10,10,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="18" />
+            <Label Content="Rows deep&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" Height="28" Width="112"/>
+            <Label Content="Rows count&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="28" Width="112" Grid.Row="1"/>
+            <TextBox Grid.Column="1" Name="RowsCountTextBlock" HorizontalAlignment="Left" Margin="10,10,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="18" Grid.Row="1" />
+            <CheckBox Content="CheckBox" Name="OffsetCheckbox" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+            <Label Content="Offset&#xD;&#xA;&#xA;" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="28" Width="112" Grid.Row="2"/>
+            <Label Content="Circuit count&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Height="28" Width="112" Grid.Row="3"/>
+            <TextBox Grid.Column="1" Name="CircuitCountTextBlock" HorizontalAlignment="Left" Margin="10,5,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="18" Grid.Row="3" />
+            <Button Content="Draw" Name="DrawButton" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="4" VerticalAlignment="Center" Click="Draw_Click" Width="56"/>
+
+        </Grid>
+        <Canvas Name="Canvas" Grid.Column="2"/>
     </Grid>
 </Window>
