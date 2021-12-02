@@ -15,5 +15,17 @@ namespace DotesPrototype.Models
             Row = row;
             Column = column;
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Tube tube &&
+                   Row == tube.Row &&
+                   Column == tube.Column;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Row, Column);
+        }
     }
 }

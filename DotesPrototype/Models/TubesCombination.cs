@@ -14,7 +14,7 @@ namespace DotesPrototype.Models
         private int rawTubesPerCircuit;
         public int FirstNumber { get; set; }
         public int SecondNumber { get; set; }
-        public List<int> ResultCombination { get; set; }
+        public List<int> tubePatterns { get; set; }
         public TubesCombination(int tubes, int circuits)
         {
             TubesCount = tubes;
@@ -26,9 +26,9 @@ namespace DotesPrototype.Models
         {
             if ((TubesCount%CircuitCount) == 0 && rawTubesPerCircuit % 2 == 0)
             {
-                ResultCombination = new List<int>();
+                tubePatterns = new List<int>();
                 for (int i = 0; i < CircuitCount; i++)
-                    ResultCombination.Add(rawTubesPerCircuit);
+                    tubePatterns.Add(rawTubesPerCircuit);
             }
             else
             {
@@ -42,7 +42,7 @@ namespace DotesPrototype.Models
                     FirstNumber = rawTubesPerCircuit - 1;
                     SecondNumber = rawTubesPerCircuit + 1;
                 }
-                ResultCombination = findCombination(FirstNumber, SecondNumber);
+                tubePatterns = findCombination(FirstNumber, SecondNumber);
             }
         }
         List<int> findCombination(int first,int second)
@@ -75,7 +75,7 @@ namespace DotesPrototype.Models
         {
             StringBuilder result = new StringBuilder();
             result.Append('[');
-            foreach (var item in ResultCombination)
+            foreach (var item in tubePatterns)
             {
                 result.Append(item);
                 result.Append(' ');

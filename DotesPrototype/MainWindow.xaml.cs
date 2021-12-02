@@ -41,9 +41,18 @@ namespace DotesPrototype
             }
             else
             {
-                DrawCanvas();
+                DrawCanvas(); 
+                DrawCircuits();
                 LogLabel.Content = coil.Log;
                 ErrorLabel.Visibility = Visibility.Hidden;
+            }
+        }
+        private void DrawCircuits()
+        {
+            Random rnd = new Random();
+            foreach (Circuit circuit in coil.Circuits)
+            {
+                Canvas.Children.Add(polyline(circuit, Color.FromRgb((byte)rnd.Next(255), (byte)rnd.Next(255), (byte)rnd.Next(255))));
             }
         }
         private void DrawCanvas()
@@ -72,6 +81,16 @@ namespace DotesPrototype
                     }
                 }
             }
+        }
+        private Polyline polyline(Circuit circuit,Color color)
+        {
+            Polyline pl = new Polyline();
+            pl.Points = circuit.getPoints(20, 20, 10, coil.Offset);
+            SolidColorBrush mySolidColorBrush = new SolidColorBrush();
+            mySolidColorBrush.Color = color;
+            pl.StrokeThickness = 2;
+            pl.Stroke = mySolidColorBrush;
+            return pl;
         }
         private Ellipse newEllipse(double x, double y)
         {
