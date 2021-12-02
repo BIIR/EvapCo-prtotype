@@ -22,7 +22,7 @@
                 <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
-                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="80"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition></RowDefinition>
@@ -42,7 +42,7 @@
             <TextBox Grid.Column="1" Name="CircuitCountTextBlock" HorizontalAlignment="Left" Margin="10,5,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="18" Grid.Row="3" />
             <Button Content="Draw" Name="DrawButton" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="4" VerticalAlignment="Center" Click="Draw_Click" Width="56"/>
             <Label x:Name="ErrorLabel" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="7" Grid.ColumnSpan="2" VerticalAlignment="Top" Foreground="#FFFF0303" FontWeight="Bold" />
-            <Label x:Name="PatternLabel" Content="Circuits patter:" HorizontalAlignment="Left" Margin="10,24,0,0" Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Top"/>
+            <Label x:Name="LogLabel" Content="Circuits patter:" HorizontalAlignment="Left" Margin="10,24,0,0" Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Top"/>
 
         </Grid>
         <Canvas Name="Canvas" Grid.Column="2"/>

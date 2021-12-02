@@ -24,6 +24,11 @@ namespace DotesPrototype.Models
                 return count;
             }
         }
+        public string Log { get
+            {
+                return $"Circuit Pattern: {Combination.ToString()}\n Total tubes: {TubesCount}\n Tubes used: {Combination.ResultCombination.Sum()} ";
+            }
+        }
         public List<int> CircuitCombination{ get; set; }
         public TubesCombination Combination { get; set; }
 

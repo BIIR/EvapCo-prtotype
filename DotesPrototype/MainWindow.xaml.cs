@@ -42,7 +42,7 @@ namespace DotesPrototype
             else
             {
                 DrawCanvas();
-                PatternLabel.Content = "Circuits pattern:" + coil.Combination.ToString();
+                LogLabel.Content = coil.Log;
                 ErrorLabel.Visibility = Visibility.Hidden;
             }
         }
