@@ -34,7 +34,17 @@ namespace DotesPrototype
             bool offset = OffsetCheckbox.IsChecked.Value;
             int circuitCount = Convert.ToInt32(CircuitCountTextBlock.Text);
             coil = new Coil(offset, rowsDeep, rowsCount,circuitCount);
-            DrawCanvas();
+            if (coil.Error.HasError)
+            {
+                ErrorLabel.Visibility = Visibility.Visible;
+                ErrorLabel.Content = coil.Error.Message;
+            }
+            else
+            {
+                DrawCanvas();
+                PatternLabel.Content = "Circuits pattern:" + coil.Combination.ToString();
+                ErrorLabel.Visibility = Visibility.Hidden;
+            }
         }
         private void DrawCanvas()
         {
